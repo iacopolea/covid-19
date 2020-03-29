@@ -18,5 +18,22 @@ interface Datum {
 }
 
 interface DatumRegion extends Datum{
+  lat: number
+  long: number
   codice_regione: number
+  denominazione_regione: string
+}
+
+interface DatumDistrict {
+  data: string
+  stato: string
+  codice_regione: number
+  denominazione_regione: string
+  codice_provincia: number
+  denominazione_provincia: string
+  sigla_provincia: string
+  lat: number
+  long: number
+  note_it: string
+  note_en: string
 }

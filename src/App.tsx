@@ -3,6 +3,7 @@ import { Typography, Layout, Menu } from 'antd';
 import './App.css';
 import Italy from "./Italy";
 import Regions from "./Regions";
+import Districts from "./Districts";
 
 export default () => {
   const { Title, Paragraph } = Typography;
@@ -20,6 +21,7 @@ export default () => {
         </Paragraph>
         <Italy />
         <Regions />
+        <Districts />
       </Content>
       <Footer></Footer>
     </Layout>
