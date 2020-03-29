@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Layout, Menu } from 'antd';
+import { Typography, Layout } from 'antd';
 import './App.css';
 import Italy from "./Italy";
 import Regions from "./Regions";
