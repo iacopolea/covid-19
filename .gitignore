@@ -8,17 +8,16 @@ lerna-debug.log*
 
 # production
 /build
+.firebase
 
 # misc
 .DS_Store
+.env
+.env.test
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
-
-# Coverage directory used by tools like istanbul
-coverage
-*.lcov
 
 # Dependency directories
 node_modules/
@@ -44,11 +43,5 @@ jspm_packages/
 
 # Yarn Integrity file
 .yarn-integrity
-
-# dotenv environment variables file
-.env
-.env.test
-
-# Comment in the public line in if your project uses Gatsby and *not* Next.js
-# https://nextjs.org/blog/next-9-1#public-directory-support
-# public
+/.firebaserc
+/firebase.json
