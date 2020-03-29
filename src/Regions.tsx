@@ -71,12 +71,6 @@ export default () => {
         }
       </Select>
       <Select onChange={handleRegionChange}
-              showSearch
-              optionFilterProp="children"
-              filterOption={(input, option) =>
-                // @ts-ignore
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
               style={{ width: 140 }}
               // @ts-ignore
               defaultValue={'Lombardia'}>
