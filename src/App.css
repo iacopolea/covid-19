@@ -1,21 +1,24 @@
-.App {
+@import '~antd/dist/antd.css';
+
+:root {
+  --dark: #011627;
+  --light: #fdfffc;
+  --main-color: #1890ff;
+  --main-light: #A8DADC;
+  --main-muted: #457B9D;
+  --accent: #ff9f1c;
+}
+.app {
   text-align: center;
+  background-color: var(--light);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {color: var(--main-color)}
+.ant-typography {
+  color: var(--dark);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.appHeader {
+  background-color: var(--dark);
+  min-height: 75px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,11 +26,34 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.appHeader .mainTitle {
+  margin-bottom: 0;
+  color: #FFF;
 }
-
+.appMain {
+  min-height: calc(100vh - 75px);
+  position: relative;
+  padding: 15px 10px;
+}
+.appSection {
+  margin-bottom: 30px;
+}
+@media all and (min-width: 414px) {
+  .appMain {
+    padding: 15px 30px;
+  }
+}
+@media all and (min-width: 960px) {
+  .appMain {
+    padding: 15px 50px;
+    width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .appSection {
+    margin-bottom: 50px;
+  }
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
