@@ -45,6 +45,7 @@ export default () => {
     <section className='appSection'>
       <Title level={2}>Andamento Nazionale</Title>
       <Select onChange={handleChange}
+              style={{ width: 200 }}
               // @ts-ignore
               defaultValue={defaultValue}>
         {

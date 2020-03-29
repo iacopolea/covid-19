@@ -50,6 +50,13 @@ export default () => {
     <section className='appSection'>
       <Title level={2}>Casi per Provincia</Title>
       <Select onChange={handleChange}
+              showSearch
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                // @ts-ignore
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+              style={{ width: 140 }}
         // @ts-ignore
               defaultValue={'Milano'}>
         {

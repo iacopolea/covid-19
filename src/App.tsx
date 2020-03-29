@@ -16,14 +16,14 @@ export default () => {
       </Header>
       <Content className='appMain'>
         <Paragraph style={{textAlign: 'left'}}>
-          Per informare e mettere a disposizione i dati raccolti, il Dipartimento della Protezione Civile mette
-          a disposizione, le seguenti informazioni aggiornate quotidianamente alle 18:00 circa. <a href='https://github.com/pcm-dpc/COVID-19' target='_blank'>https://github.com/pcm-dpc/COVID-19</a>
+          Il Dipartimento della Protezione Civile mette a disposizione le seguenti informazioni
+          aggiornate quotidianamente alle 18:00 circa. <a href='https://github.com/pcm-dpc/COVID-19' target='_blank'>https://github.com/pcm-dpc/COVID-19</a>
         </Paragraph>
         <Italy />
         <Regions />
         <Districts />
       </Content>
-      <Footer></Footer>
+      <Footer>Visita la repository di questo sito su <a href='https://github.com/iacopolea/covid-19'>https://github.com/iacopolea/covid-19</a></Footer>
     </Layout>
   );
 }

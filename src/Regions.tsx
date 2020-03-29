@@ -57,6 +57,7 @@ export default () => {
     <section className='appSection'>
       <Title level={2}>Andamento Regioni</Title>
       <Select onChange={handleChange}
+              style={{ width: 140 }}
               // @ts-ignore
               defaultValue={defaultValue}>
         {
@@ -70,7 +71,14 @@ export default () => {
         }
       </Select>
       <Select onChange={handleRegionChange}
-        // @ts-ignore
+              showSearch
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                // @ts-ignore
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+              style={{ width: 140 }}
+              // @ts-ignore
               defaultValue={'Lombardia'}>
         {
           Object.keys(regionHeaders).map(key => (
