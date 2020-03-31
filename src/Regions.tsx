@@ -8,21 +8,13 @@ import {
   BarChart
 } from 'recharts';
 import { Typography, Select } from 'antd';
-import {headers, regionHeaders, theme, dateAxisFormatter, numberAxisFormatter} from "./common";
-
-const binArrayToJson = (binArray:Uint8Array) => {
-  let str = "";
-  for (let i = 0; i < binArray.length; i++) {
-    str += String.fromCharCode(parseInt(String(binArray[i])));
-  }
-  return JSON.parse(str)
-};
+import {headers, regionHeaders, theme, dateAxisFormatter, numberAxisFormatter, binArrayToJson} from "./common";
 
 export default () => {
   const [allRegions, setAllRegions] = useState({3: []});
   const defaultRegion = 3;
   const [selectedRegion, setRegion] = useState(defaultRegion);
-  const defaultValue = 'totale_attualmente_positivi';
+  const defaultValue = 'totale_positivi';
   const [selectedHeader, setHeader] = useState(defaultValue);
   const { Title } = Typography;
   useEffect(() => {

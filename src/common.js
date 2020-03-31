@@ -11,14 +11,14 @@ export const theme = {
     grey: '#d3d3d3'
   }
 };
-
 export const headers = {
   ricoverati_con_sintomi: 'Ricoverati con Sintomi',
   terapia_intensiva: 'Terapia Intensiva',
   totale_ospedalizzati: 'totale Ospedalizzati',
   isolamento_domiciliare: 'Isolamento Domiciliare',
-  totale_attualmente_positivi: 'Totale Attualmente Positivi',
-  nuovi_attualmente_positivi: 'Nuovi Attualmente Positivi',
+  totale_positivi: 'Totale Positivi',
+  variazione_totale_positivi: 'Variazione Totale Positiivi',
+  nuovi_positivi: 'Nuovi Positivi',
   dimessi_guariti: 'Dimessi Guariti',
   deceduti: 'Deceduti',
   totale_casi: 'Totale Casi',

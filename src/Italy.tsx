@@ -12,7 +12,7 @@ import {headers, theme, dateAxisFormatter, binArrayToJson} from "./common";
 
 export default () => {
   const [dataIta, setDataIta] = useState([]);
-  const defaultValue = 'totale_attualmente_positivi';
+  const defaultValue = 'totale_positivi';
   const [selectedHeader, setHeader] = useState(defaultValue);
   const { Title } = Typography;
   useEffect(() => {
