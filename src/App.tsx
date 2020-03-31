@@ -23,7 +23,14 @@ export default () => {
         <Regions />
         <Districts />
       </Content>
-      <Footer>Visita la repository di questo sito su <a href='https://github.com/iacopolea/covid-19'>https://github.com/iacopolea/covid-19</a></Footer>
+      <Footer>
+        <Paragraph style={{textAlign: 'left'}}>
+          Visita la repository di questo sito su <a href='https://github.com/iacopolea/covid-19'>https://github.com/iacopolea/covid-19</a>
+        </Paragraph>
+        <Paragraph style={{textAlign: 'left'}}>
+          Grafici realizzati con Rechart: <a href='https://github.com/recharts/recharts'>https://github.com/recharts/recharts</a>
+        </Paragraph>
+      </Footer>
     </Layout>
   );
 }
