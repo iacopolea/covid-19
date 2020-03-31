@@ -8,19 +8,11 @@ import {
   BarChart
 } from 'recharts';
 import { Typography, Select } from 'antd';
-import {headers, theme, dateAxisFormatter} from "./common";
-
-const binArrayToJson = (binArray:Uint8Array) => {
-  let str = "";
-  for (let i = 0; i < binArray.length; i++) {
-    str += String.fromCharCode(parseInt(String(binArray[i])));
-  }
-  return JSON.parse(str)
-};
+import {headers, theme, dateAxisFormatter, binArrayToJson} from "./common";
 
 export default () => {
   const [dataIta, setDataIta] = useState([]);
-  const defaultValue = 'totale_casi';
+  const defaultValue = 'totale_attualmente_positivi';
   const [selectedHeader, setHeader] = useState(defaultValue);
   const { Title } = Typography;
   useEffect(() => {
@@ -45,7 +37,7 @@ export default () => {
     <section className='appSection'>
       <Title level={2}>Andamento Nazionale</Title>
       <Select onChange={handleChange}
-              style={{ width: 200 }}
+              style={{ width: 210 }}
               // @ts-ignore
               defaultValue={defaultValue}>
         {

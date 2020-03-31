@@ -22,7 +22,7 @@ export default () => {
   const [allRegions, setAllRegions] = useState({3: []});
   const defaultRegion = 3;
   const [selectedRegion, setRegion] = useState(defaultRegion);
-  const defaultValue = 'totale_casi';
+  const defaultValue = 'totale_attualmente_positivi';
   const [selectedHeader, setHeader] = useState(defaultValue);
   const { Title } = Typography;
   useEffect(() => {
@@ -57,7 +57,7 @@ export default () => {
     <section className='appSection'>
       <Title level={2}>Andamento Regioni</Title>
       <Select onChange={handleChange}
-              style={{ width: 140 }}
+              style={{ width: 210 }}
               // @ts-ignore
               defaultValue={defaultValue}>
         {
