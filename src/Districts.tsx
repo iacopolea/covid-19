@@ -8,7 +8,7 @@ import {
   BarChart
 } from 'recharts';
 import { Typography, Select } from 'antd';
-import {theme, dateAxisFormatter, numberAxisFormatter, binArrayToJson, districtsHeaders} from "./common";
+import {theme, dateAxisFormatter, numberAxisFormatter, districtsHeaders} from "./common";
 
 export default () => {
   const [allDistricts, setAllDistricts] = useState({15:[]});
@@ -18,25 +18,18 @@ export default () => {
   useEffect(() => {
     const fetchData = async () => {
       fetch('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-province.json').then(async function (response) {
-        if (response && response.body) {
-          // @ts-ignore
-          response.arrayBuffer().then(function(buffer) {
+        if (response.ok) {
+          const data:Array<DatumDistrict> = await response.json();
+          let final = {};
+          for (let i=1; i<=111; i++) {
             // @ts-ignore
-            const uint8View = new Uint8Array(buffer);
-            const data:Array<DatumDistrict> = binArrayToJson(uint8View);
-            // const data = JSON.parse('{}');
-            //const str = Buffer.concat(buffer);
-            let final = {};
-            for (let i=1; i<=111; i++) {
+            final[i] = data.filter(datum => {
               // @ts-ignore
-              final[i] = data.filter(datum => {
-                // @ts-ignore
-                return datum.codice_provincia === i;
-              })
-            }
-            // @ts-ignore
-            setAllDistricts(final);
-          });
+              return datum.codice_provincia === i;
+            })
+          }
+          // @ts-ignore
+          setAllDistricts(final);
         }
       });
     };

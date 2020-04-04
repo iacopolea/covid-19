@@ -8,7 +8,7 @@ import {
   BarChart
 } from 'recharts';
 import { Typography, Select } from 'antd';
-import {headers, theme, dateAxisFormatter, binArrayToJson} from "./common";
+import {headers, theme, dateAxisFormatter} from "./common";
 
 export default () => {
   const [dataIta, setDataIta] = useState([]);
@@ -18,10 +18,8 @@ export default () => {
   useEffect(() => {
     const fetchData = async () => {
       fetch('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-andamento-nazionale.json').then(async function (response) {
-        if (response && response.body) {
-          const reader = await response.body.getReader();
-          const readData = await reader.read();
-          const data:Array<Datum> = binArrayToJson(readData.value);
+        if (response.ok) {
+          const data:Array<Datum> = await response.json();
           // @ts-ignore
           setDataIta(data);
         }

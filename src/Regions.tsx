@@ -8,7 +8,7 @@ import {
   BarChart
 } from 'recharts';
 import { Typography, Select } from 'antd';
-import {headers, regionHeaders, theme, dateAxisFormatter, numberAxisFormatter, binArrayToJson} from "./common";
+import {headers, regionHeaders, theme, dateAxisFormatter, numberAxisFormatter} from "./common";
 
 export default () => {
   const [allRegions, setAllRegions] = useState({3: []});
@@ -20,10 +20,11 @@ export default () => {
   useEffect(() => {
     const fetchData = async () => {
       fetch('https://raw.githubusercontent.com/pcm-dpc/COVID-19/master/dati-json/dpc-covid19-ita-regioni.json').then(async function (response) {
-        if (response && response.body) {
-          const reader = await response.body.getReader();
-          const readData = await reader.read();
-          const data:Array<DatumRegion> = binArrayToJson(readData.value);
+        if (response.ok) {
+          const data:Array<DatumRegion> = await response.json();
+          //const reader = await response.body.getReader();
+          //const readData = await reader.read();
+          //const data:Array<DatumRegion> = binArrayToJson(readData.value);
           let final = {};
           for (let i=1; i<=20; i++) {
             // @ts-ignore
